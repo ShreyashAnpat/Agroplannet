@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "79224302018",
+    "project_id": "agroplannet",
+    "storage_bucket": "agroplannet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79224302018:android:5e5f02946d7c5cb3878e5b",
+        "android_client_info": {
+          "package_name": "com.e.agroplannet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79224302018-6ds5vmujfdmuvn3v1f1ljrb9jgf9b0d9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbWjIc_jYtXDYWYjTrn2n3uDPLixsLKhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79224302018-6ds5vmujfdmuvn3v1f1ljrb9jgf9b0d9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

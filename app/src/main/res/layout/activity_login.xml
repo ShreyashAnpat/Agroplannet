@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.Login">
+
+    <include layout="@layout/content_login" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Log in"
+            android:textSize="27dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="30dp"/>
+        <TextView
+
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Enter your Mobile number "
+            android:textSize="17dp"
+            android:textColor="#707070"
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+
+            <com.hbb20.CountryCodePicker
+                android:layout_gravity="center"
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                app:ccpDialog_showPhoneCode="true"
+                app:ccpDialog_showTitle="true"
+                app:ccp_showArrow="true"
+                app:ccp_showNameCode="true" />
+
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="248dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="17dp"
+                android:hint="Enter Phone number"
+                android:inputType="phone" />
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/getOtp"
+            android:layout_width="match_parent"
+
+            android:layout_height="43dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="get otp "
+            android:textColor="@color/black"
+            android:background="@drawable/button_background"/>
+
+        <TextView
+            android:id="@+id/sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Sign up an account "
+            android:textColor="#03A9F4"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

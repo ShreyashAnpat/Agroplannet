@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.Register_user">
+
+
+    <include layout="@layout/content_register_user" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Register_user"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome to \nonshop"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Creat Your Account "
+            android:textSize="17dp"
+            android:textColor="#707070"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Name"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                />
+
+            <EditText
+                android:id="@+id/velage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Village/City "
+                android:paddingLeft="10dp"
+                android:maxLines="1"
+                android:layout_marginTop="20dp"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/taluka"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:hint="Taluka"
+                    android:layout_marginLeft="0dp"
+                    android:paddingLeft="10dp"
+                    android:maxLines="1"
+                    android:layout_marginTop="0dp"
+                    />
+
+                <EditText
+                    android:id="@+id/district"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:hint="District"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/nearBy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Near by"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:maxLines="1"
+
+                android:windowSoftInputMode="adjustResize"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    app:ccp_showNameCode="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <EditText
+                    android:id="@+id/phone_number"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Phone number"
+                    android:paddingLeft="10dp"
+                    android:maxLines="1"
+                    android:layout_marginTop="0dp"
+                    android:inputType="phone"
+                    />
+
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/verify"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:text="Sign up"
+                android:textColor="@color/black"
+                android:background="@drawable/button_background"/>
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:textColor="#03A9F4"
+                android:text="Login your account" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NevigationActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="@color/black"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/black"
+            app:popupTheme="@style/Theme.Agroplannet.PopupOverlay"
+            android:paddingRight="10dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="2dp"-->
+<!--            android:layout_above="@id/bottom"-->
+<!--            android:background="@drawable/shadow"/>-->
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/bottom"-->
+
+<!--            android:layout_alignParentBottom="true">-->
+
+<!--            <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/botom_nav"-->
+<!--                app:itemIconTint="@color/selector"-->
+<!--                app:labelVisibilityMode="unlabeled"-->
+<!--                android:background="#F6C328"-->
+<!--                app:menu="@menu/activity_main_drawer"-->
+
+<!--                />-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+<!--    </RelativeLayout>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
