@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="25dp"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
             >
@@ -111,7 +111,8 @@
                 android:id="@+id/Amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
                 android:text="1"
                 android:textColor="@color/black"

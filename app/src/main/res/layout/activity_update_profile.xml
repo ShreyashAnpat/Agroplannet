@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfile"
+    >
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="5dp"
+        android:id="@+id/Navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:background="@color/purple_700"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_gravity="center_vertical"
+                android:layout_width="25dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Profile"
+                android:textColor="#191919"
+                android:textFontWeight="8"
+                android:layout_gravity="center_vertical"
+                android:textSize="17dp"
+                android:layout_marginStart="20dp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/Navigation"
+        tools:layout_editor_absoluteX="6dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Profile"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_baseline_image_24"
+            app:civ_border_width="1dp"
+            android:outlineAmbientShadowColor="@color/black"
+            android:elevation="2dp"
+
+            app:civ_border_color="#AEAEAE"/>
+        <TextView
+            android:id="@+id/Change_profile"
+            android:textSize="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Profile"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:paddingLeft="2dp"
+                android:text="User name" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="User name"
+                android:text="Shreyash anpat" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="2dp"
+                android:text="Address" />
+
+            <EditText
+                android:textSize="17dp"
+                android:id="@+id/Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="User name"
+                android:text="Saswad" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="2dp"
+                android:text="Phone No ." />
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="User name"
+                android:text="+91 755842442"
+                android:enabled="false"
+                android:textColor="#333333"/>
+            <Button
+                android:id="@+id/Update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Prodile"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="50dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

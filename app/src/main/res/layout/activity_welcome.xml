@@ -7,28 +7,55 @@
     tools:context=".Welcome">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:orientation="vertical"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="250dp"
+            android:layout_marginBottom="20dp"
             android:layout_height="150dp"
-            android:src="@drawable/logo"/>
-<!--        <TextView-->
-<!--            android:id="@+id/text"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Online Shopping ..."-->
-<!--            android:textColor="#000000"-->
-<!--            android:textStyle="bold"/>-->
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        <TextView-->
+        <!--            android:id="@+id/text"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Online Shopping ..."-->
+        <!--            android:textColor="#000000"-->
+        <!--            android:textStyle="bold"/>-->
 
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="13dp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Design and developed by "/>
+            <ImageView
 
-
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/clearcode_logo"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

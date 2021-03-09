@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.e.agroplannet.FirstFragment"
+        android:name="com.cctpl.agroplannet.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.e.agroplannet.SecondFragment"
+        android:name="com.cctpl.agroplannet.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -25,64 +25,5 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/First2Fragment"
-        android:name="com.e.agroplannet.login.First2Fragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first2">
 
-        <action
-            android:id="@+id/action_First2Fragment_to_Second2Fragment"
-            app:destination="@id/Second2Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/Second2Fragment"
-        android:name="com.e.agroplannet.login.Second2Fragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second2">
-
-        <action
-            android:id="@+id/action_Second2Fragment_to_First2Fragment"
-            app:destination="@id/First2Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/First3Fragment"
-        android:name="com.e.agroplannet.login.First3Fragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first3">
-
-        <action
-            android:id="@+id/action_First3Fragment_to_Second3Fragment"
-            app:destination="@id/Second3Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/Second3Fragment"
-        android:name="com.e.agroplannet.login.Second3Fragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second3">
-
-        <action
-            android:id="@+id/action_Second3Fragment_to_First3Fragment"
-            app:destination="@id/First3Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/First4Fragment"
-        android:name="com.e.agroplannet.login.First4Fragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first4">
-
-        <action
-            android:id="@+id/action_First4Fragment_to_Second4Fragment"
-            app:destination="@id/Second4Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/Second4Fragment"
-        android:name="com.e.agroplannet.login.Second4Fragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second4">
-
-        <action
-            android:id="@+id/action_Second4Fragment_to_First4Fragment"
-            app:destination="@id/First4Fragment" />
-    </fragment>
 </navigation>

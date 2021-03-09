@@ -15,6 +15,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.Agroplannet.FloatingAccentButtonOverlay" >
+        <item name="colorAccent">@color/purple_700</item>
+    </style>
+
     <style name="Theme.Agroplannet.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

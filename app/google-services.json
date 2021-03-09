@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "79224302018",
-    "project_id": "agroplannet",
-    "storage_bucket": "agroplannet.appspot.com"
+    "project_number": "114795839192",
+    "project_id": "agrocart-f10b8",
+    "storage_bucket": "agrocart-f10b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:79224302018:android:5e5f02946d7c5cb3878e5b",
+        "mobilesdk_app_id": "1:114795839192:android:793da5e4566567d5dea1ad",
         "android_client_info": {
-          "package_name": "com.e.agroplannet"
+          "package_name": "com.cctpl.agroplannet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "79224302018-6ds5vmujfdmuvn3v1f1ljrb9jgf9b0d9.apps.googleusercontent.com",
+          "client_id": "114795839192-b296ivs26c0ctve6abkps22vnpuea2tb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbWjIc_jYtXDYWYjTrn2n3uDPLixsLKhQ"
+          "current_key": "AIzaSyC-tOu690tCI2WTFMAKn1IqJbYZwZUJbSM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "79224302018-6ds5vmujfdmuvn3v1f1ljrb9jgf9b0d9.apps.googleusercontent.com",
+              "client_id": "114795839192-b296ivs26c0ctve6abkps22vnpuea2tb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

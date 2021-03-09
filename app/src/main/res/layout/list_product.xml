@@ -48,6 +48,9 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="5dp"
                android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
                <TextView
                    android:id="@+id/productSellingPrice"
                    android:layout_width="wrap_content"
@@ -56,15 +59,28 @@
                    android:layout_marginLeft="10dp"
                    android:textSize="18dp"
                    android:textColor="#FF5722"/>
-               <TextView
-                   android:bufferType="spannable"
-                   android:id="@+id/MRP"
-                   android:layout_marginTop="4dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="M.R.P. :- ₹12000"
-                   android:textSize="13dp"
-                   android:layout_marginLeft="10dp"/>
+                   <TextView
+                       android:id="@+id/off"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="(50% off)"
+                       android:textSize="13dp"
+                       android:maxLength="10"
+                       android:layout_marginLeft="10dp"/>
+               </LinearLayout>
+
+
+                   <TextView
+                       android:bufferType="spannable"
+                       android:id="@+id/MRP"
+                       android:layout_marginTop="4dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="M.R.P. :- ₹12000"
+                       android:textSize="13dp"
+                       android:layout_marginLeft="10dp"/>
+
+
 
 
            </LinearLayout>

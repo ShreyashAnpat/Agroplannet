@@ -54,54 +54,21 @@
 
                 />
 
-            <EditText
-                android:id="@+id/velage"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="Village/City "
-                android:paddingLeft="10dp"
-                android:maxLines="1"
-                android:layout_marginTop="20dp"
 
-                />
-            <LinearLayout
+
+            <EditText
+                android:id="@+id/Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/taluka"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:hint="Taluka"
-                    android:layout_marginLeft="0dp"
-                    android:paddingLeft="10dp"
-                    android:maxLines="1"
-                    android:layout_marginTop="0dp"
-                    />
-
-                <EditText
-                    android:id="@+id/district"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-
-                    android:hint="District"
-                    android:maxLines="1"
-                    android:paddingLeft="10dp" />
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/nearBy"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="Near by"
+                android:hint="User Address"
                 android:paddingLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:maxLines="1"
-
+                android:maxLines="3"
                 android:windowSoftInputMode="adjustResize"
                 />
+
+
+
 
             <LinearLayout
                 android:layout_marginTop="20dp"
@@ -115,6 +82,7 @@
                     android:layout_height="wrap_content"
                     />
                 <EditText
+                    android:maxLength="11"
                     android:id="@+id/phone_number"
                     android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
