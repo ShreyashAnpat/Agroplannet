@@ -48,11 +48,12 @@ public class Register_user extends AppCompatActivity implements LocationListener
         phonenumber = findViewById(R.id.phone_number);
         ccp.registerCarrierNumberEditText(phonenumber);
         getotp = findViewById(R.id.verify);
-        address = findViewById(R.id.Address);
-        pd = new ProgressDialog(this);
-        pd.setCanceledOnTouchOutside(false);
-        pd.setMessage("Adding Your Location");
-        pd.show();
+        address = findViewById(R.id.location);
+
+//        pd = new ProgressDialog(this);
+//        pd.setCanceledOnTouchOutside(false);
+//        pd.setMessage("Adding Your Location");
+//        pd.show();
         if (ContextCompat.checkSelfPermission(Register_user.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(Register_user.this,new String[]{

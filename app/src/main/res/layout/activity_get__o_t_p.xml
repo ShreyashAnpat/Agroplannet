@@ -33,74 +33,89 @@
             android:textColor="#707070"
             />
         <LinearLayout
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
             <EditText
-                android:id="@+id/number1"
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:hint=" * "
+                android:id="@+id/OTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="  _  _  _  _  _  _ "
                 android:gravity="center"
+                android:maxLength="6"
                 android:inputType="number"
-                android:maxLength="1"
-                android:digits="1234567890"
-                android:imeOptions="actionNext"/>
-            <EditText
-                android:gravity="center"
-                android:id="@+id/number2"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/otp_background"
                 android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:hint=" * "
-                android:digits="1234567890"
-                android:maxLength="1"
-                android:imeOptions="actionNext"
-                android:inputType="phone"/>
-            <EditText
-                android:id="@+id/number3"
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:hint=" * "
-                android:maxLength="1"
-                android:gravity="center"
-                android:imeOptions="actionNext"
-                android:inputType="phone"/>
-            <EditText
-                android:id="@+id/number4"
-                android:imeOptions="actionNext"
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:digits="1234567890"
-                android:hint=" * "
-                android:maxLength="1"
-                android:gravity="center"
-                android:inputType="phone"/>
-            <EditText
-                android:id="@+id/number5"
-                android:imeOptions="actionNext"
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:hint=" * "
-                android:maxLength="1"
-                android:gravity="center"
-                android:inputType="phone"/>
-            <EditText
-                android:id="@+id/number6"
-                android:imeOptions="actionNext"
-                android:layout_gravity="center"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:hint=" * "
-                android:digits="1234567890"
-                android:maxLength="1"
-                android:gravity="center"
-                android:inputType="phone"/>
+
+                android:textSize="20dp"
+                android:padding="10dp"/>
+<!--            <EditText-->
+<!--                android:id="@+id/number1"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:hint=" * "-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="1"-->
+<!--                android:digits="1234567890"-->
+<!--                android:imeOptions="actionNext"/>-->
+<!--            <EditText-->
+<!--                android:gravity="center"-->
+<!--                android:id="@+id/number2"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:hint=" * "-->
+<!--                android:digits="1234567890"-->
+<!--                android:maxLength="1"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:inputType="phone"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/number3"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:hint=" * "-->
+<!--                android:maxLength="1"-->
+<!--                android:gravity="center"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:inputType="phone"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/number4"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:digits="1234567890"-->
+<!--                android:hint=" * "-->
+<!--                android:maxLength="1"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="phone"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/number5"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:hint=" * "-->
+<!--                android:maxLength="1"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="phone"/>-->
+<!--            <EditText-->
+<!--                android:id="@+id/number6"-->
+<!--                android:imeOptions="actionNext"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:hint=" * "-->
+<!--                android:digits="1234567890"-->
+<!--                android:maxLength="1"-->
+<!--                android:gravity="center"-->
+<!--                android:inputType="phone"/>-->
 
         </LinearLayout>
 

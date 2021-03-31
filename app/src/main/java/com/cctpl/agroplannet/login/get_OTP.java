@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class get_OTP extends AppCompatActivity {
 
     Button mBtnVerifyOTP;
-    EditText mOtp1, mOtp2, mOtp3,mOtp4 , mOtp5,mOtp6 ;
+    EditText mOtp1, mOtp2, mOtp3,mOtp4 , mOtp5,mOtp6  , OTP;
     String OtpId ,mPhoneNumber;
     FirebaseAuth mAuth;
     @Override
@@ -39,13 +39,13 @@ public class get_OTP extends AppCompatActivity {
 
         mPhoneNumber = getIntent().getStringExtra("number").toString();
         mBtnVerifyOTP = findViewById(R.id.verify);
-        mOtp1 = findViewById(R.id.number1);
-        mOtp2 = findViewById(R.id.number2);
-        mOtp3 = findViewById(R.id.number3);
-        mOtp4 = findViewById(R.id.number4);
-        mOtp5 = findViewById(R.id.number5);
-        mOtp6 = findViewById(R.id.number6);
-
+//        mOtp1 = findViewById(R.id.number1);
+//        mOtp2 = findViewById(R.id.number2);
+//        mOtp3 = findViewById(R.id.number3);
+//        mOtp4 = findViewById(R.id.number4);
+//        mOtp5 = findViewById(R.id.number5);
+//        mOtp6 = findViewById(R.id.number6);
+        OTP = findViewById(R.id.OTP);
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("fr");
         InitiateOtp(mPhoneNumber);
@@ -53,7 +53,7 @@ public class get_OTP extends AppCompatActivity {
         mBtnVerifyOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String amOtp = mOtp1.getText().toString() + mOtp2.getText().toString() + mOtp3.getText().toString() + mOtp4.getText().toString() + mOtp5.getText().toString() + mOtp6.getText().toString();
+                String amOtp = OTP.getText().toString();
                 if (amOtp.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please enter OTP", Toast.LENGTH_SHORT).show();
                 }else if (amOtp.length()!=6){
@@ -89,8 +89,7 @@ public class get_OTP extends AppCompatActivity {
 
                         Toast.makeText(get_OTP.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                });        // OnVerificationStateChangedCallbacks
-
+                });        // OnVerificationStateChangedCallback
     }
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
@@ -99,7 +98,6 @@ public class get_OTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(get_OTP.this, NevigationActivity.class);
-
                             startActivity(intent);
                             finish();
                         } else {

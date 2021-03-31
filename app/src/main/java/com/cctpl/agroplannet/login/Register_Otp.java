@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 public class Register_Otp extends AppCompatActivity {
 
     Button mBtnVerifyOTP;
-    EditText mOtp1, mOtp2, mOtp3,mOtp4 , mOtp5,mOtp6 ;
+    EditText mOtp1, mOtp2, mOtp3,mOtp4 , mOtp5,mOtp6 ,OTP;
     String OtpId ,mPhoneNumber;
     FirebaseAuth mAuth;
     String add , name ;
@@ -40,13 +40,14 @@ public class Register_Otp extends AppCompatActivity {
         setContentView(R.layout.activity_register__otp);
         mPhoneNumber = getIntent().getStringExtra("number").toString();
         mBtnVerifyOTP = findViewById(R.id.verify);
-        mOtp1 = findViewById(R.id.number1);
-        mOtp2 = findViewById(R.id.number2);
-        mOtp3 = findViewById(R.id.number3);
-        mOtp4 = findViewById(R.id.number4);
-        mOtp5 = findViewById(R.id.number5);
-        mOtp6 = findViewById(R.id.number6);
+//        mOtp1 = findViewById(R.id.number1);
+//        mOtp2 = findViewById(R.id.number2);
+//        mOtp3 = findViewById(R.id.number3);
+//        mOtp4 = findViewById(R.id.number4);
+//        mOtp5 = findViewById(R.id.number5);
+//        mOtp6 = findViewById(R.id.number6);
 
+        OTP = findViewById(R.id.OTP);
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("fr");
         InitiateOtp(mPhoneNumber);
@@ -60,7 +61,7 @@ public class Register_Otp extends AppCompatActivity {
         mBtnVerifyOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String amOtp = mOtp1.getText().toString() + mOtp2.getText().toString() + mOtp3.getText().toString() + mOtp4.getText().toString() + mOtp5.getText().toString() + mOtp6.getText().toString();
+                String amOtp = OTP.getText().toString();
                 if (amOtp.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please enter OTP", Toast.LENGTH_SHORT).show();
                 }else if (amOtp.length()!=6){
@@ -116,6 +117,7 @@ public class Register_Otp extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),auth.getUid(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Register_Otp.this, NevigationActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                         else {
                             Toast.makeText(Register_Otp.this, "Error...", Toast.LENGTH_SHORT).show();

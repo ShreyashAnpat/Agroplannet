@@ -101,7 +101,7 @@ public class CartFragment extends Fragment {
                     });
 
                 }
-                if (Image1.size()!=0){
+                if (ProductDetails.size()!=0){
                     noProduct.setVisibility(View.GONE);
                     Secure_Checkout.setVisibility(View.VISIBLE);
 
@@ -138,15 +138,15 @@ public class CartFragment extends Fragment {
                             }
 
                         }
-                        if (Image1.size()!=0){
-                            noProduct.setVisibility(View.GONE);
-                            Secure_Checkout.setVisibility(View.INVISIBLE);
+                         if (Image1.size()!=0){
+                             noProduct.setVisibility(View.GONE);
+                             Secure_Checkout.setVisibility(View.VISIBLE);
 
-                        }else {
-                            noProduct.setVisibility(View.VISIBLE);
-                            Secure_Checkout.setVisibility(View.GONE);
-
-                        }
+                         }else {
+                             noProduct.setVisibility(View.VISIBLE);
+                             Secure_Checkout.setVisibility(View.INVISIBLE);
+                                                              
+                         }
                         cardList.setLayoutManager(new LinearLayoutManager(root.getContext()));
                         cardAdapter = new cardAdapter(root.getContext(),Image1,ProductDetails,ProductMeasurement,ProductPrice,ProductCount ,MRP,ProductSellingPrice, AvailableProduct);
                         cardList.setAdapter(cardAdapter);

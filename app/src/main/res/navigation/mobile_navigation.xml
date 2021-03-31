@@ -22,4 +22,10 @@
         android:name="com.cctpl.agroplannet.ui.profile.ProfileFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_orderHistory"
+        android:name="com.cctpl.agroplannet.ui.orderHistory.OderHistoryFragment"
+        android:label="@string/menu_orderHistory"
+        tools:layout="@layout/fragment_oder_history" />
 </navigation>

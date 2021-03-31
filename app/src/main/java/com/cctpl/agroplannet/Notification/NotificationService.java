@@ -32,7 +32,6 @@ public class NotificationService extends FirebaseMessagingService{
 
     private void ShowNotification() {
         createNotificationChannel();
-
         Intent intent = new Intent(this, Welcome.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
@@ -44,7 +43,6 @@ public class NotificationService extends FirebaseMessagingService{
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true);
-
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(this);
         managerCompat.notify(404,builder.build());
     }

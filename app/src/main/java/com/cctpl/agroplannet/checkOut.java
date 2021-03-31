@@ -64,7 +64,6 @@ public class checkOut extends AppCompatActivity {
     CardView place_Order;
     SwipeRefreshLayout refreshLayout ;
     String fcmUrl = "https://fcm.googleapis.com/",Token;
-//    String OwnerId = "dY6zP55i2MT0Pzy4QEa55tplERv1";
     String OwnerId;
     String CurrentUserId,UserName;
     List<OrderData> orderData ;
@@ -360,7 +359,6 @@ public class checkOut extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
             }
-
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
