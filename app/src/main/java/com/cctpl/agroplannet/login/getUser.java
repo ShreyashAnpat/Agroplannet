@@ -46,7 +46,9 @@ public class getUser extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user !=null){
-            startActivity(new Intent(getUser.this, NevigationActivity.class));
+            Intent intent  = new Intent(getUser.this, NevigationActivity.class);
+            intent.putExtra("flag", "0");
+            startActivity(intent);
             finish();
         }
     }

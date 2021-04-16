@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.cctpl.agroplannet.Adapter.searchAdapter;
 
+import com.cctpl.agroplannet.ui.cart.CartFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -59,6 +62,7 @@ public class NevigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nevigation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String flag ;
         searchList = findViewById(R.id.searchItem);
         context = getApplicationContext() ;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -88,6 +92,7 @@ public class NevigationActivity extends AppCompatActivity {
         });
 
 
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow ,R.id.nav_orderHistory)
                 .setDrawerLayout(drawer)
@@ -95,6 +100,12 @@ public class NevigationActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        flag = getIntent().getStringExtra("flag");
+        if (flag.equals("Open Cart")){
+            navController.navigate(R.id.nav_gallery);
+        }
+
 
     }
 

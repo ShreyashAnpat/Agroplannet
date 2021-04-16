@@ -168,7 +168,9 @@ public class History_order_details extends AppCompatActivity {
 
                                     }
 
-                                  startActivity(new Intent( History_order_details.this , error.class));
+                                    Intent intent = new Intent(History_order_details.this , NevigationActivity.class);
+                                    intent.putExtra("flag" , "Open Cart");
+                                    startActivity(intent);
                                 }
                             });
 

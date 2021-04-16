@@ -97,7 +97,9 @@ public class get_OTP extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             Intent intent = new Intent(get_OTP.this, NevigationActivity.class);
+                            intent.putExtra("flag" , "0");
                             startActivity(intent);
                             finish();
                         } else {

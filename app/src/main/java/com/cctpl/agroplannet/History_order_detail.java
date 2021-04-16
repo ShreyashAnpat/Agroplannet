@@ -161,9 +161,10 @@ public class History_order_detail extends Fragment {
                                         db.collection("user").document(auth.getCurrentUser().getUid()).collection("UserCard").document().set(addProduct);
 
                                     }
-                                    getChildFragmentManager().beginTransaction().replace(R.id.nav_host_fragment , new CartFragment()).addToBackStack(null).commit();
                                 }
+
                             });
+
 
                         }
                     });

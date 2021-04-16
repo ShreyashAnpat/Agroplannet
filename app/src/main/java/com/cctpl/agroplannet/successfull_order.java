@@ -33,7 +33,9 @@ public class successfull_order extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(successfull_order.this, NevigationActivity.class));
+                Intent intent = new Intent(successfull_order.this, NevigationActivity.class);
+                intent.putExtra("flag" ,"0");
+                startActivity(intent);
                 finish();
             }
         });
@@ -42,7 +44,9 @@ public class successfull_order extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(successfull_order.this, NevigationActivity.class));
+        Intent intent = new Intent(successfull_order.this, NevigationActivity.class);
+        intent.putExtra("flag" ,"0");
+        startActivity(intent);
         finish();
     }
 }
