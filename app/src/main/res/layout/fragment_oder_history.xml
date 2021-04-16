@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.orderHistory.OderHistoryFragment">
+    tools:context=".ui.orderHistory.OderHistoryFragment"
+    android:background="#F8F8F8">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/order_list"
+        android:layout_marginTop="10dp"/>
 
 </FrameLayout>

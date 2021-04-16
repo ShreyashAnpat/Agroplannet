@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cctpl.agroplannet">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -11,7 +12,11 @@
         android:roundIcon="@drawable/launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Agroplannet">
-        <activity android:name=".successfull_order" android:theme="@style/Theme.Agroplannet.NoActionBar"></activity>
+        <activity android:name=".error"></activity>
+        <activity android:name=".History_order_details" />
+        <activity
+            android:name=".successfull_order"
+            android:theme="@style/Theme.Agroplannet.NoActionBar" />
         <activity
             android:name=".UpdateProfile"
             android:theme="@style/Theme.Agroplannet.NoActionBar" />

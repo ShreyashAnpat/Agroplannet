@@ -29,6 +29,7 @@ import com.cctpl.agroplannet.Notification.NotificationSender;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -186,6 +187,8 @@ public class checkOut extends AppCompatActivity {
         place_Order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Long tsLong = System.currentTimeMillis()/1000;
+                String ts = tsLong.toString();
 
                 String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -197,6 +200,9 @@ public class checkOut extends AppCompatActivity {
                 PlaceOrder.put("Order_Date" , currentDate);
                 PlaceOrder.put("Order_Time" , currentTime);
                 PlaceOrder.put("Flag","1");
+                PlaceOrder.put("Status" , "Active_Order");
+                PlaceOrder.put("TimeStamp" ,  ts);
+                PlaceOrder.put("Total_Product" ,Image1.size());
 
 
                 for (int i =0 ; i<ProductDetails.size();i++){
