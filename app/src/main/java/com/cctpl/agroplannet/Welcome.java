@@ -33,6 +33,7 @@ public class Welcome extends AppCompatActivity {
         setSupportActionBar(toolbar);
         logo = findViewById(R.id.logo);
         text = findViewById(R.id.text);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
 
         new Timer().schedule(new TimerTask() {

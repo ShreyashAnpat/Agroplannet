@@ -12,7 +12,6 @@
         android:roundIcon="@drawable/launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Agroplannet">
-        <activity android:name=".error"></activity>
         <activity android:name=".History_order_details" />
         <activity
             android:name=".successfull_order"

@@ -64,6 +64,7 @@ public class UpdateProfile extends AppCompatActivity {
         pd.setCanceledOnTouchOutside(false);
         pd.setMessage("Update Profile");
         back = findViewById(R.id.back);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

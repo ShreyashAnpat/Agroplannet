@@ -185,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/shopAddres"
-                android:text=""
+                android:text="Saswad, Maharashtra 415521 , India"
                 android:gravity="center_vertical"
                 android:layout_gravity="center_vertical"
                 android:textColor="#000"
