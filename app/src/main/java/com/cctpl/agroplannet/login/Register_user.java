@@ -49,6 +49,7 @@ public class Register_user extends AppCompatActivity implements LocationListener
         ccp.registerCarrierNumberEditText(phonenumber);
         getotp = findViewById(R.id.verify);
         address = findViewById(R.id.location);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
 //        pd = new ProgressDialog(this);
 //        pd.setCanceledOnTouchOutside(false);

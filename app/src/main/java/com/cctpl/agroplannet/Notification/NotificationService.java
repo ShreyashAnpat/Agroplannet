@@ -4,6 +4,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 
@@ -21,13 +23,17 @@ import com.google.firebase.messaging.RemoteMessage;
 public class NotificationService extends FirebaseMessagingService{
     String title,message;
     public static String CHANNEL_ID = "Notification_Channel";
-
+    Bitmap icon;
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         title = remoteMessage.getData().get("title");
         message = remoteMessage.getData().get("msg");
+        icon = BitmapFactory.decodeResource(getResources(),
+                R.drawable.logo);
         ShowNotification();
+
+
     }
 
     private void ShowNotification() {
@@ -36,9 +42,12 @@ public class NotificationService extends FirebaseMessagingService{
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
 
+
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_baseline_location_on_24)
+                .setSmallIcon(R.drawable.logo)
                 .setContentTitle(title)
+                .setSmallIcon(R.drawable.logo)
                 .setContentText(message)
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)

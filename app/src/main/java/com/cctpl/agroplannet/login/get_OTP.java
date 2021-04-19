@@ -36,6 +36,7 @@ public class get_OTP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get__o_t_p);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         mPhoneNumber = getIntent().getStringExtra("number").toString();
         mBtnVerifyOTP = findViewById(R.id.verify);

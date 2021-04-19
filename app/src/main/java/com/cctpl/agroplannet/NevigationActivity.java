@@ -1,7 +1,10 @@
 package com.cctpl.agroplannet;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.MenuItem;
@@ -56,6 +59,7 @@ public class NevigationActivity extends AppCompatActivity {
     Fragment NewFragment ;
     Context context ;
     Button logOut ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +84,7 @@ public class NevigationActivity extends AppCompatActivity {
         productMeasurement = new ArrayList<>();
         productType = new ArrayList<>();
         AvailableProduct = new ArrayList<>();
+
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         logOut.setOnClickListener(new View.OnClickListener() {
@@ -105,10 +110,34 @@ public class NevigationActivity extends AppCompatActivity {
         if (flag.equals("Open Cart")){
             navController.navigate(R.id.nav_gallery);
         }
+        if(flag.equals("OrderHistory")) {
+            navController.navigate(R.id.nav_orderHistory);
+        }
+        ProgressDialog pd = new ProgressDialog(NevigationActivity.this);
+        pd.setMessage("Check your internet Connection");
+        pd.setCanceledOnTouchOutside(false);
+
+        Boolean connection = isOnline() ;
+        if (!connection){
+          pd.show();
+            isOnline() ;
+        }
+        else {
+
+            pd.cancel();
+        }
 
 
     }
-
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
     @Override
@@ -184,9 +213,6 @@ public class NevigationActivity extends AppCompatActivity {
         });
         return true;
     }
-
-
-
 
     @Override
     public boolean onSupportNavigateUp() {

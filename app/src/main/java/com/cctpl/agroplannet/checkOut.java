@@ -26,6 +26,7 @@ import com.cctpl.agroplannet.Notification.Client;
 import com.cctpl.agroplannet.Notification.Data;
 import com.cctpl.agroplannet.Notification.NotificationSender;
 
+import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -107,6 +108,7 @@ public class checkOut extends AppCompatActivity {
         CVV = findViewById(R.id.cvv);
         AddCard = findViewById(R.id.add_to_card);
         ExpNo = findViewById(R.id.ExpDate);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         AddCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -293,20 +295,20 @@ public class checkOut extends AppCompatActivity {
                     }
                 });
 
+                db.collection("Tokens").document(auth.getCurrentUser().getUid()).get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()){
+                                    Token = task.getResult().getString("token");
+                                    String extra = "Your Order is placed ";
+                                    String data = "Tab see information";
+                                    sendNotification(Token,extra ,data);
+                                }
+                            }
+                        });
 
-//                FirebaseFirestore.getInstance().collection("user").document(auth.getCurrentUser().getUid())
-//                        .collection("UserCard")
-//                        .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                            @Override
-//                            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//                                if (!value.isEmpty()){
-//                                    for (DocumentChange doc : value.getDocumentChanges()){
-//                                        FirebaseFirestore.getInstance().collection("user").document(auth.getCurrentUser().getUid())
-//                                                .collection("UserCard").document(doc.)
-//                                    }
-//                                }
-//                            }
-//                        });
+
             }
         });
 

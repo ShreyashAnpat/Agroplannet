@@ -13,6 +13,8 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -47,13 +49,14 @@ public class HomeFragment extends Fragment {
     FirebaseFirestore db ;
     SwipeRefreshLayout refresh;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         sliderView = root.findViewById(R.id.imageSlider);
         images = new ArrayList<>();
         images.add(R.drawable.farm);
-        images.add(R.drawable.farm1);
+        images.add(R.drawable.banner);
         images.add(R.drawable.pump);
         refresh = root.findViewById(R.id.refresh);
         categoryList = root.findViewById(R.id.categoryAdapter);
@@ -76,8 +79,9 @@ public class HomeFragment extends Fragment {
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new CartFragment();
-                getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,fragment).commit();
+
+                NavController navController = Navigation.findNavController(root);;
+                navController.navigate(R.id.nav_gallery);
             }
         });
 
@@ -183,7 +187,7 @@ public class HomeFragment extends Fragment {
                 new AlertDialog.Builder(getContext())
                         .setIcon(R.drawable.launcher)
                         .setTitle("Alert")
-                        .setMessage("Are you sure you want to close this app?")
+                        .setMessage("Are you want to close this app?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener()
                         {
                             @Override

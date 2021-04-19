@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -171,8 +173,8 @@ public class CartFragment extends Fragment {
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
             @Override
             public void handleOnBackPressed() {
-                Fragment fragment = new HomeFragment();
-                getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
+                NavController navController = Navigation.findNavController(getView());;
+                navController.navigate(R.id.nav_home);
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);

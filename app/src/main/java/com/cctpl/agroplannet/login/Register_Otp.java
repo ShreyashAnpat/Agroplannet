@@ -40,6 +40,8 @@ public class Register_Otp extends AppCompatActivity {
         setContentView(R.layout.activity_register__otp);
         mPhoneNumber = getIntent().getStringExtra("number").toString();
         mBtnVerifyOTP = findViewById(R.id.verify);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
 //        mOtp1 = findViewById(R.id.number1);
 //        mOtp2 = findViewById(R.id.number2);
 //        mOtp3 = findViewById(R.id.number3);
@@ -115,7 +117,8 @@ public class Register_Otp extends AppCompatActivity {
 
                             db.collection("user").document(auth.getCurrentUser().getUid()).set(info) ;
                             Toast.makeText(getApplicationContext(),auth.getUid(), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Register_Otp.this, NevigationActivity.class);
+                            Intent intent = new Intent(Register_Otp.this , NevigationActivity.class);
+                            intent.putExtra("flag" , "0");
                             startActivity(intent);
                             finish();
                         }

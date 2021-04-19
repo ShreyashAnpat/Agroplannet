@@ -11,10 +11,12 @@
         android:id="@+id/lottieAnimationView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/done"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/comformer" />
+        app:lottie_rawRes="@raw/conform" />
 
     <TextView
         android:gravity="center"
@@ -27,11 +29,11 @@
     <androidx.cardview.widget.CardView
         android:foreground="?selectableItemBackground"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_height="40dp"
+        android:layout_margin="50dp"
         app:cardElevation="10dp"
         android:id="@+id/done"
-        app:cardCornerRadius="2dp"
+        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent">
         <TextView
             android:layout_width="match_parent"
@@ -40,7 +42,6 @@
             android:textSize="16dp"
             android:gravity="center"
             android:background="@color/purple_700"
-            android:textStyle="bold"
             android:textColor="@color/black"/>
     </androidx.cardview.widget.CardView>
 

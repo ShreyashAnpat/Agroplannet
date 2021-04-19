@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
     Button getotp ;
     TextView sign_up ;
     FirebaseFirestore db ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,7 @@ public class Login extends AppCompatActivity {
         phonenumber = findViewById(R.id.number);
         ccp.registerCarrierNumberEditText(phonenumber);
         getotp = findViewById(R.id.getOtp);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         sign_up.setOnClickListener(new View.OnClickListener() {
             @Override

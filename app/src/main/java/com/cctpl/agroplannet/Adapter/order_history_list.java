@@ -3,39 +3,27 @@ package com.cctpl.agroplannet.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cctpl.agroplannet.History_order_detail;
 import com.cctpl.agroplannet.History_order_details;
-import com.cctpl.agroplannet.NevigationActivity;
 import com.cctpl.agroplannet.R;
-import com.cctpl.agroplannet.ui.cart.CartFragment;
 
 import java.util.List;
 
 public class order_history_list extends RecyclerView.Adapter<order_history_list.ViewHolder> {
-    List<String> Order_Date ,Order_Time ,Total ,Total_Products , OrderID , status  ;
+    List<String> Order_Date ,Order_Time ,Total ,Total_Products , OrderID , status  , Order_activate ;
     Context context , mcontext ;
     LayoutInflater inflater ;
 
-    public order_history_list(Context context, List<String> order_date, List<String> order_time, List<String> total, List<String> total_products, List<String> orderID, List<String> status) {
+    public order_history_list(Context context, List<String> order_date, List<String> order_time, List<String> total, List<String> total_products, List<String> orderID, List<String> status, List<String> order_Activate) {
         this.context = context ;
         this.Order_Date = order_date ;
         this.Order_Time  = order_time ;
@@ -44,6 +32,7 @@ public class order_history_list extends RecyclerView.Adapter<order_history_list.
         this.OrderID = orderID ;
         this.inflater = LayoutInflater.from(context);
         this.status = status ;
+        this.Order_activate = order_Activate ;
     }
 
     @NonNull
@@ -62,24 +51,23 @@ public class order_history_list extends RecyclerView.Adapter<order_history_list.
         if (status.get(position).equals("2")){
             holder.status.setText("Delivered Order");
             holder.icon.setImageDrawable(context.getResources().getDrawable(R.drawable.correct));
-            holder.status.setTextColor(Color.parseColor("#52CC99"));
+            holder.status.setTextColor(Color.parseColor("#03A561"));
         }
+        if (Order_activate.get(position).equals("cancel")){
+            holder.status.setText("Canceled Order");
+            holder.icon.setImageDrawable(context.getResources().getDrawable(R.drawable.cancel));
+            holder.status.setTextColor(Color.parseColor("#FF2A00"));
+        }
+
 
         holder.card_Details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//                Fragment fragment  = new CartFragment() ;
-//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-//                Bundle bundle = new Bundle();
-//                bundle.putString("DocID" , OrderID.get(position));
-//                bundle.putString("status" ,status.get(position));
-//                fragment.setArguments(bundle);
-//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment , fragment).commit();
-
                 Intent intent = new Intent(context , History_order_details.class);
                 intent.putExtra("DocID" , OrderID.get(position));
                 intent.putExtra("status" , status.get(position));
+                intent.putExtra("Order_activate" , Order_activate.get(position));
                 context.startActivity(intent);
             }
         });

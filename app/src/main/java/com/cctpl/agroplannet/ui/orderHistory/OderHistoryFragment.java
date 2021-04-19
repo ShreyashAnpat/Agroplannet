@@ -10,16 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.cctpl.agroplannet.Adapter.order_history_list;
 import com.cctpl.agroplannet.Model.OrderData;
 import com.cctpl.agroplannet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -27,10 +31,11 @@ import java.util.List;
 
 public class OderHistoryFragment extends Fragment {
     RecyclerView orderHistory  ;
-    List<String> Order_Date ,Order_Time ,Total ,Total_Products , OrderID  , status;
+    List<String> Order_Date ,Order_Time ,Total ,Total_Products , OrderID  , status , Order_Activate;
     order_history_list adapter ;
     FirebaseAuth auth ;
     FirebaseFirestore db ;
+    LinearLayout first_Order ;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,25 +51,38 @@ public class OderHistoryFragment extends Fragment {
         Total_Products = new ArrayList<>();
         OrderID = new ArrayList<>();
         status = new ArrayList<>();
+        first_Order = view.findViewById(R.id.firstOrder);
+        Order_Activate = new ArrayList<>();
 
 
+<<<<<<< HEAD
         db.collection("Pending Order").whereEqualTo("UserId" , auth.getCurrentUser().getUid())
                 .whereEqualTo("Status" ,"Active_Order")
                 .orderBy("TimeStamp").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+=======
+
+
+        db.collection("Pending Order").whereEqualTo("UserId" , auth.getCurrentUser().getUid()).orderBy("TimeStamp" , Query.Direction.DESCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+>>>>>>> 5b527ab1fe44da42bacd3aa344021937b54d7258
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isComplete()){
-                    for (DocumentSnapshot doc : task.getResult().getDocuments()){
-                        Order_Date.add(doc.get("Order_Date").toString());
-                        Order_Time.add(doc.getString("Order_Time"));
-                        Total.add(doc.getString("Total"));
-                        OrderID.add(doc.getId());
-                        Total_Products.add(doc.get("Total_Product").toString());
-                        status.add(doc.get("Flag").toString());
+                    for (DocumentChange doc : task.getResult().getDocumentChanges()){
+                        Order_Date.add(doc.getDocument().get("Order_Date").toString());
+                        Order_Time.add(doc.getDocument().getString("Order_Time"));
+                        Total.add(doc.getDocument().getString("Total"));
+                        OrderID.add(doc.getDocument().getId());
+                        Total_Products.add(doc.getDocument().get("Total_Product").toString());
+                        status.add(doc.getDocument().get("Flag").toString());
+                        Order_Activate.add(doc.getDocument().get("Status").toString());
                     }
                     orderHistory.setLayoutManager(new LinearLayoutManager(getContext()));
-                    adapter = new order_history_list(getContext() , Order_Date ,Order_Time , Total , Total_Products ,OrderID , status);
+                    adapter = new order_history_list(getContext() , Order_Date ,Order_Time , Total , Total_Products ,OrderID , status , Order_Activate);
                     orderHistory.setAdapter(adapter);
+
+                    if (Order_Date.size() == 0){
+                        first_Order.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });

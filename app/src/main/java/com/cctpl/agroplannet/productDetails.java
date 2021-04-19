@@ -81,6 +81,7 @@ public class productDetails extends AppCompatActivity {
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         sliderView.setIndicatorSelectedColor(Color.BLACK);
         sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
 
 
@@ -180,7 +181,9 @@ public class productDetails extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         pd.cancel();
-                                        startActivity(new Intent(productDetails.this,NevigationActivity.class));
+                                        Intent intent = new Intent(productDetails.this,NevigationActivity.class);
+                                        intent.putExtra("flag" ,"0");
+                                        startActivity(intent);
                                     }
                                 });
                             }
