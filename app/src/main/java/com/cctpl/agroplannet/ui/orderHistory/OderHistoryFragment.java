@@ -55,15 +55,14 @@ public class OderHistoryFragment extends Fragment {
         Order_Activate = new ArrayList<>();
 
 
-<<<<<<< HEAD
-        db.collection("Pending Order").whereEqualTo("UserId" , auth.getCurrentUser().getUid())
-                .whereEqualTo("Status" ,"Active_Order")
-                .orderBy("TimeStamp").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-=======
+
+//        db.collection("Pending Order").whereEqualTo("UserId" , auth.getCurrentUser().getUid())
+//                .whereEqualTo("Status" ,"Active_Order")
+//                .orderBy("TimeStamp").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {};
+
 
 
         db.collection("Pending Order").whereEqualTo("UserId" , auth.getCurrentUser().getUid()).orderBy("TimeStamp" , Query.Direction.DESCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
->>>>>>> 5b527ab1fe44da42bacd3aa344021937b54d7258
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isComplete()){
