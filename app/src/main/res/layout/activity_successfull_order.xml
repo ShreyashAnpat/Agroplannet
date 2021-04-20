@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@+id/done"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
-        app:lottie_loop="true"
+        app:lottie_loop="false"
         app:lottie_rawRes="@raw/conform" />
 
     <TextView
@@ -23,8 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your Order is delivered in 5 days "
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="HardcodedText" />
 
     <androidx.cardview.widget.CardView
         android:foreground="?selectableItemBackground"

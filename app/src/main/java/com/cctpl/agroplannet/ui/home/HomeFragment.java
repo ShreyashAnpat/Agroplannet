@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.TextView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -26,7 +28,10 @@ import com.cctpl.agroplannet.R;
 import com.cctpl.agroplannet.Welcome;
 import com.cctpl.agroplannet.ui.cart.CartFragment;
 
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -47,6 +52,7 @@ public class HomeFragment extends Fragment {
     String[] category ;
     List<String> Image1,Image2,Image3,productDetails,productMRP,productSellingPrice,productMeasurement,productType,AvailableProduct;
     FirebaseFirestore db ;
+    FirebaseAuth firebaseAuth;
     SwipeRefreshLayout refresh;
 
 
@@ -61,6 +67,7 @@ public class HomeFragment extends Fragment {
         refresh = root.findViewById(R.id.refresh);
         categoryList = root.findViewById(R.id.categoryAdapter);
         db = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         SliderAdapter adapter = new SliderAdapter(root.getContext(),images);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_RIGHT);
@@ -82,6 +89,19 @@ public class HomeFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(root);;
                 navController.navigate(R.id.nav_gallery);
+            }
+        });
+
+        // Cart item count
+        TextView itemCount = root.findViewById(R.id.Item_count);
+        db.collection("user").document(firebaseAuth.getCurrentUser().getUid())
+                .collection("UserCard").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (!value.isEmpty()){
+                    String  count = String.valueOf(value.size());
+                    itemCount.setText(count);
+                }
             }
         });
 
