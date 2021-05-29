@@ -15,10 +15,9 @@ android {
         versionName "1.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-<<<<<<< HEAD
-=======
+
         //functionlity
->>>>>>> b2bfb7774160f47c543ef7467eb77e7cd7210147
+
     }
 
     buildTypes {

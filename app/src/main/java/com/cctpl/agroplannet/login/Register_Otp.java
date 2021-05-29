@@ -42,13 +42,6 @@ public class Register_Otp extends AppCompatActivity {
         mBtnVerifyOTP = findViewById(R.id.verify);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-//        mOtp1 = findViewById(R.id.number1);
-//        mOtp2 = findViewById(R.id.number2);
-//        mOtp3 = findViewById(R.id.number3);
-//        mOtp4 = findViewById(R.id.number4);
-//        mOtp5 = findViewById(R.id.number5);
-//        mOtp6 = findViewById(R.id.number6);
-
         OTP = findViewById(R.id.OTP);
         mAuth = FirebaseAuth.getInstance();
         mAuth.setLanguageCode("fr");
@@ -114,9 +107,7 @@ public class Register_Otp extends AppCompatActivity {
                             info.put("address " ,add);
                             info.put("phone_no", mPhoneNumber);
                             info.put("imgUrl", "https://firebasestorage.googleapis.com/v0/b/agrocart-f10b8.appspot.com/o/UserProfile%2Fprofile_agrocart.png?alt=media&token=6988be85-cf7a-4546-95e3-69cf385d5648");
-
                             db.collection("user").document(auth.getCurrentUser().getUid()).set(info) ;
-                            Toast.makeText(getApplicationContext(),auth.getUid(), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Register_Otp.this , NevigationActivity.class);
                             intent.putExtra("flag" , "0");
                             startActivity(intent);
